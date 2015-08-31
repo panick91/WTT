@@ -3,16 +3,9 @@
  */
 'use strict';
 
-angular.module('wtt.navigation', ['ngRoute'])
+angular.module('wtt.filter', ['ngRoute'])
 
-    .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/filter', {
-            templateUrl: 'filter/filter.html',
-            controller: 'NavigationCtrl'
-        });
-    }])
-
-    .controller('NavigationCtrl', function($scope,$http,$location) {
+    .controller('FilterCtrl', function($scope,$http,$location) {
         $scope.requestData = [];
 
         $scope.init = function(){

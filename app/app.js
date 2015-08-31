@@ -5,7 +5,8 @@ angular.module('wtt', [
     'ui.router',
     'wtt.overview',
     'wtt.detail',
-    'wtt.navigation',
+    'wtt.filter',
+    'wtt.results',
     'wtt.version'
 ]).
     config(['$stateProvider', '$routeProvider', function ($stateProvider, $routeProvider) {
@@ -13,16 +14,21 @@ angular.module('wtt', [
         $stateProvider
             .state('home', {
                 url: '/',
-                views: {
-                    'overview':{
-                        templateUrl: 'overview/overview.html',
-                        controller: 'OverviewCtrl',
+                views:{
+                    '':{
+                        templateUrl:'overview/overview.html',
+                        controller: 'OverviewCtrl'
                     },
-                    'filter': {
-                        templateUrl: 'filter/filter.html',
-                        controller: 'NavigationCtrl'
+                    'filter@home':{
+                        templateUrl:'overview/filter/filter.html',
+                        controller: 'FilterCtrl'
+                    },
+                    'results@home':{
+                        templateUrl:'overview/results/results.html',
+                        controller: 'ResultsCtrl'
                     }
                 }
+
             })
             .state('detail', {
                 url: '/detail',
