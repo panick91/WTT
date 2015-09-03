@@ -5,13 +5,6 @@
 
 angular.module('wtt.detail', ['ngRoute', 'ui.materialize'])
 
-    .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/overview', {
-            templateUrl: 'detail/detail.html',
-            controller: 'DetailCtrl'
-        });
-    }])
-
     .controller('DetailCtrl', function ($scope, $state, $http, $location) {
 
         $scope.requestData = [];
