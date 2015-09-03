@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('wtt.filter', ['ngRoute'])
+angular.module('wtt.filter', [])
 
     .controller('FilterCtrl', function($scope,$http,$location) {
         $scope.requestData = [];

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('wtt.overview', ['ngRoute', 'ui.materialize'])
+angular.module('wtt.overview', ['ui.materialize'])
 
     .controller('OverviewCtrl', function ($scope, $state, $http, $location) {
 

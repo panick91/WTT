@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('wtt.results', ['ngRoute'])
+angular.module('wtt.results', [])
 
     .controller('ResultsCtrl', function($scope,$http,$location) {
         $scope.requestData = [];

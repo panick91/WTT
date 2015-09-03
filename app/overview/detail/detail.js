@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('wtt.detail', ['ngRoute', 'ui.materialize'])
+angular.module('wtt.detail', ['ui.materialize'])
 
     .controller('DetailCtrl', function ($scope, $state, $http, $location) {
 

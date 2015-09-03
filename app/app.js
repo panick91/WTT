@@ -9,8 +9,8 @@ angular.module('wtt', [
     'wtt.results',
     'wtt.version'
 ]).
-    config(['$stateProvider', '$routeProvider', function ($stateProvider, $routeProvider) {
-        $routeProvider.otherwise('/');
+    config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
         $stateProvider
             .state('home', {
                 url: '/',
