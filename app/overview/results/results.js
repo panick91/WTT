@@ -9,7 +9,7 @@ angular.module('wtt.results', [])
         $scope.requestData = [];
 
         $scope.init = function(){
-            $http.get('/api/requests').success(function (data) {
+            $http.get('/api/1.0/requests').success(function (data) {
                 $scope.requestData = data;
             });
         }
