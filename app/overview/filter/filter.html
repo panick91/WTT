@@ -1,35 +1,56 @@
 <div class="row">
-    <h2 class="center">Search your room</h2>
 </div>
 <div class="row">
     <div class="col s12">
         <form>
-            <div class="card-panel">
+            <div class="card-panel" id="filter_panel">
                 <div class="row">
-                    <div class="col m5 s12">
+                    <div class="col m12 s12">
                         <div class="input-field">
-                            <label for="start_dt">Check-in date</label>
-                            <input input-date type="text" id="start_dt" ng-model="search_param.start_dt"  format="d-m-yyyy"/>
+                            <label for="service_id">Service ID</label>
+                            <input type="text" id="service_id" ng-model="search_param.service_id"/>
                         </div>
                     </div>
-                    <div class="col m5 s12">
+                    <div class="col m12 s12">
                         <div class="input-field">
-                            <label for="end_dt">Check-in date</label>
-                            <input input-date type="text" id="end_dt" ng-model="search_param.end_dt"  format="d-m-yyyy"  />
+                            <label for="customer_name">Customer</label>
+                            <input type="text" id="customer_name" ng-model="search_param.customer_name"/>
                         </div>
                     </div>
-                    <div class="col m2 s12">
-                        <label for="occupancy">Persons</label>
-                        <select class="" id="occupancy" ng-model="search_param.min_occupancy" material-select>
+                    <div class="col m12 s12">
+                        <div class="input-field">
+                            <label for="site_id">Site ID</label>
+                            <input type="text" id="site_id" ng-model="search_param.site_id"/>
+                        </div>
+                    </div>
+                    <div class="col m12 s12">
+                        <div class="input-field">
+                            <label for="gv_nr">GV-Nr.</label>
+                            <input type="text" id="gv_nr" ng-model="search_param.gv_nr"/>
+                        </div>
+                    </div>
+                    <!--<div class="col m10 s12">
+                        <label for="status">Status</label>
+                        <select class="" id="status" ng-model="search_param.status" material-select>
                             <option ng-repeat="value in select_occupancy" value="{{value}}">{{value}}</option>
                         </select>
-                    </div>
+                    </div>-->
+                    <div class="col m10 s12">
+                        <label for="status">Status</label>
+                            <select class="selectmenu" id="status" ng-model="search_param.status" material-select>
+                                <option value="" selected>All</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
                 </div>
                 <div class="row">
                     <div class="col m4 offset-m4">
                         <button ng-click="search()" class="btn">Search</button>
                     </div>
                 </div>
+            </div>
             </div>
         </form>
     </div>

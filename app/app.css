@@ -28,3 +28,121 @@
   content: "";
   padding: 0;
 }
+.teal-text{
+  font-size: xx-large;
+}
+.row.ng-scope{
+  background-color: #F7F7F7;
+}
+
+/* CSS für ganzes Panel ---------------------------------------------------------*/
+
+.card-panel{
+  border: transparent;
+}
+
+/* CSS für Filter----------------------------------------------------------------- */
+
+#filter_panel{
+  margin-top: 60px;
+  padding-top: 0px;
+  box-shadow: none;
+  background-color: #F7F7F7;
+  border: solid #3A67B4;
+  border-radius:0px;
+  border-width: 0px 4px 0px 0px;
+  height: 2250px;
+}
+.card-panel div{
+  margin-top: 0px;
+  border: transparent;
+}
+input[type=text]{
+  color: #0050A0;
+  font-size: 16px;
+  border: 2px solid #3A67B4;
+  background-color: #FFFFFF;
+  height: 30px;
+  padding: 3px;
+  border-radius: 20px;
+}
+input[type=text]:focus:not([readonly]){
+  border-bottom: 2px solid #3A67B4;
+  box-shadow: none;
+}
+input[type=text].valid{
+  border-bottom: 2px solid lightgrey;
+  box-shadow: none;
+}
+select div{
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 30px;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+}
+.select-wrapper input.select-dropdown{
+  color: #3A67B4;
+  font-size: 16px;
+  border: 2px solid #3A67B4;
+  height: 30px;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: initial;
+  width: 100%;
+  background: white;
+}
+.dropdown-content{
+  border-radius: 20px;
+  border: 2px solid #3A67B4;
+  background-color: white;
+}
+.dropdown-content li > a, .dropdown-content li > span{
+  font-size: 16px;
+  color: #3A67B4;
+  display: block;
+}
+.dropdown-content li > a, .dropdown-content li > span:hover{
+  background-color: #F7F7F7;
+  border: 1px solid #3A67B4;
+  border-left: none;
+  border-right:none;
+}
+.btn{
+  background-color: #3A67B4;
+  border-radius: 20px;
+  margin-left: -120%;
+}
+.btn div{
+  margin-left: 0px;
+}
+.btn:hover{
+  background-color: #3A67B4;
+  box-shadow: 4px;
+}
+
+/* CSS für Results-----------------------------------------------------------------*/
+#results_panel{
+  border: 2px solid #3A67B4;
+  border-radius: 8px;
+  height: 130px;
+  cursor: pointer;
+}
+#results_panel:first-of-type{
+  margin-top: 80px;
+}
+.value_class:first-of-type{
+  padding-top: 80px;
+}
+.value_class{
+  float: left;
+  padding-right: 60px;
+}
+

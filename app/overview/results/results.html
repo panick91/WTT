@@ -1,8 +1,20 @@
 <div class="row">
     <div class="col s12">
-        <div class="card-panel" ng-repeat="request in requestData.data">
-            <div class="collection">
-                <span href="" class="collection-item">{{request.name}} - {{request.description}}</span>
+        <div class="card-panel" id="results_panel" ng-repeat="request in requestData.data">
+            <div class="serviceID">
+                <span href="" class="serviceID_item">{{request.name}} - {{request.description}}</span>
+            </div><br>
+            <div class="value_class" id="customer_name">
+                <span>Customer</span><br>
+                <span>example_name</span>
+            </div>
+            <div class="value_class" id="state">
+                <span>State</span><br>
+                <span>example_state</span>
+            </div>
+            <div class="value_class" id="sad">
+                <span>SAD</span><br>
+                <span>example_date</span>
             </div>
         </div>
     </div>

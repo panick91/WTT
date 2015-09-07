@@ -1,16 +1,24 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
+  "name": "Workflow Tracking Tool",
+  "description": "",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/panick91/WTT",
   "license": "MIT",
-  "private": true,
   "dependencies": {
     "angular": "~1.4.0",
-    "angular-route": "~1.4.0",
     "angular-loader": "~1.4.0",
+    "angular-materialize": "*",
     "angular-mocks": "~1.4.0",
-    "html5-boilerplate": "~5.2.0",
-    "angular-materialize": "*"
-  }
+    "angular-route": "~1.4.0",
+    "angular-ui-router": "~0.2.15",
+    "html5-boilerplate": "~5.2.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
 }
