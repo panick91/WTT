@@ -71,7 +71,7 @@
   border: solid #3A67B4;
   border-radius:0px;
   border-width: 0px 4px 0px 0px;
-  height: 2250px;
+  height: 100%;
   position: fixed;
   width: 33%;
 }
@@ -178,8 +178,7 @@ select div{
   box-shadow: none;
   background-color: #F7F7F7;
   border: none;
-  height: 2250px;
-  height: 1500px;
+  height: 100%;
 }
 #back_btn{
   content: url(overview/detail/img/back_btn.png);
