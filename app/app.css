@@ -134,6 +134,8 @@ select div{
   font-size: 16px;
   color: #3A67B4;
   display: block;
+  height: 40px;
+  line-height: normal;
 }
 .dropdown-content li > a, .dropdown-content li > span:hover{
   background-color: #F7F7F7;
