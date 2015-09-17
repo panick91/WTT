@@ -32,7 +32,19 @@ angular.module('wtt', [
             })
             .state('detail', {
                 url: '/detail',
-                templateUrl: 'detail/detail.html',
-                controller: 'DetailCtrl'
+                views: {
+                    '': {
+                        templateUrl:'overview/overview.html',
+                        controller: 'OverviewCtrl'
+                    },
+                    'filter@detail': {
+                        templateUrl: 'overview/filter/filter.html',
+                        controller: 'FilterCtrl'
+                    },
+                    'detail@detail': {
+                        templateUrl: 'overview/detail/detail.html',
+                        controller: 'DetailCtrl'
+                    }
+                }
             })
     }]);
