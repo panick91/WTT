@@ -4,17 +4,27 @@
             <div class="serviceID">
                 <span href="" class="serviceID_item">{{request.name}} - {{request.description}}</span>
             </div><br>
-            <div class="value_class" id="customer_name">
-                <span>Customer</span><br>
-                <span>example_name</span>
-            </div>
-            <div class="value_class" id="state">
-                <span>State</span><br>
-                <span>example_state</span>
-            </div>
-            <div class="value_class" id="sad">
-                <span>SAD</span><br>
-                <span>example_date</span>
+            <div class="row">
+                <div class="col s4">
+                    <div class="customer_detail_class">
+                        <div class="detail_headings">Customer</div>
+                        <div>{{request.name}}</div>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="customer_detail_class">
+                        <div class="detail_headings">State</div>
+                        <div>example_state</div>
+
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="customer_detail_class">
+                        <div class="detail_headings">SAD</div>
+                        <div>example_date</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

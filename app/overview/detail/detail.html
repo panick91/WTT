@@ -2,28 +2,51 @@
 <!--<div class="filter" ui-view></div>-->
 <div class="row">
     <div class="col s12">
-        <div id="details_panel">
+            <div class="section" id="details_header_section">
                 <div ui-sref="home" id="back_btn"></div>
                 <div class="serviceID_details">example Service ID</div>
-                <div class="detail_container" id="timeline_container">
-                    <span>Platzhalter Timeline</span>
-                </div>
-                <div class="detail_container" id="contactdetails_container">
-                    <div class="customer_detail_class">
-                        <span id="detailspan">Details</span><br>
-                        <span id="customer_name_span">Customer</span><br>
-                        <span>example_name</span><br>
-                        <span>Max Muster</span><br>
-                        <span>Musterstreet 2</span><br>
-                        <span>8050 Muster</span><br>
-                        <span>044 567 67 67</span><br>
+            </div>
+        <div class="divider"></div>
+        <div class="section">
+                <h5>Section 1</h5>
+                <p>Timeline</p>
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <div class="row">
+                    <div id="detailspan">Details</div>
+                    <div class="col s4">
+                        <div class="customer_detail_class">
+                            <div class="detail_headings">Customer</div>
+                            <div>example_name</div>
+                            <div>Max Muster</div>
+                            <div>Musterstreet 2</div>
+                            <div>8050 Muster</div>
+                            <div>044 567 67 67</div>
+                        </div>
                     </div>
-                    <div class="service_type_class">
-                        <br><br>
-                        <span id="service_type_span">Servicetype</span><br>
-                        <span>New Installation</span><br>
+                    <div class="col s4">
+                        <div class="customer_detail_class">
+                            <div class="detail_headings">Service Delivery Responsible</div>
+                            <div>Name</div>
+                            <div>Function</div>
+                        </div>
                     </div>
+                    <div class="col s4">
+                        <div class="customer_detail_class">
+                            <div class="detail_headings">Service Type</div>
+                            <div>New Installation</div>
+                        </div>
+                    </div>
+
                 </div>
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <h5>Section 3</h5>
+                <p>Stuff</p>
+            </div>
+
         </div>
     </div>
 </div>

@@ -125,10 +125,15 @@ select div{
   line-height: normal;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
+.row .col.m10 {
+  width: 100%;
+  margin-left: 0;
+}
 .dropdown-content{
   border-radius: 20px;
   border: 2px solid #3A67B4;
   background-color: white;
+  line-height: normal;
 }
 .dropdown-content li > a, .dropdown-content li > span{
   font-size: 16px;
@@ -139,9 +144,10 @@ select div{
 }
 .dropdown-content li > a, .dropdown-content li > span:hover{
   background-color: #F7F7F7;
-  border: 1px solid #3A67B4;
   border-left: none;
   border-right:none;
+  line-height: normal;
+  font-weight: bold;
 }
 .btn{
   background-color: #3A67B4;
@@ -203,11 +209,6 @@ select div{
   padding-left: 50px;
   font-size: 30px;
   position: fixed;
-  border: 2px solid #3A67B4;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  height: 60px;
   width: 100%;
 }
 .serviceID_details div{
@@ -222,27 +223,13 @@ select div{
   margin-top: 70px;
   border-top: none;
   width: 100%;
-  border: 2px solid #3A67B4;
-  border-left: none;
-  border-right: none;
-  border-top: none;
   z-index: 3;
-}
-#contactdetails_container{
-  display: inline-block;
-  margin-top: 20px;
-  border-top: none;
-  width: 100%;
-  border: 2px solid #3A67B4;
-  border-left: none;
-  border-right: none;
-  border-top: none;
 }
 #detailspan{
   font-size: 14px;
   font-weight: bold;
 }
-#customer_name_span{
+.detail_headings{
   font-weight: bold;
   float: left;
 }
@@ -251,13 +238,14 @@ select div{
   padding-right: 60px;
   font-size: 10px;
 }
-.service_type_class{
-  float: left;
-  padding-right: 60px;
-  font-size: 10px;
+.divider{
+  background-color: #3A67B4;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
-#service_type_span{
-  font-weight: bold;
-  float: left;
+#details_header_section{
+  height: 80px;
 }
+
 
