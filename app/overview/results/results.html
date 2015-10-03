@@ -1,31 +1,41 @@
-<div class="row">
-    <div class="col s12">
-        <div class="card-panel" id="results_panel" ng-repeat="request in requestData.data">
-            <div class="serviceID">
-                <span href="" class="serviceID_item">{{request.name}} - {{request.description}}</span>
-            </div><br>
+<html ng-app="results">
+<div class="container" ng-controller="AppCtrl" ng-switch="moduleState">
+    <div ng-switch-when="list">
+        <div class="list-group">
             <div class="row">
-                <div class="col s4">
-                    <div class="customer_detail_class">
-                        <div class="detail_headings">Customer</div>
-                        <div>{{request.name}}</div>
-                    </div>
-                </div>
-                <div class="col s4">
-                    <div class="customer_detail_class">
-                        <div class="detail_headings">State</div>
-                        <div>example_state</div>
+                <div class="col s12">
+                    <div class="card-panel" class="list-group-item" id="results_panel"
+                         ng-click="showDetail()" ng-repeat="request in requestData.data">
+                        <div class="serviceID">
+                            <div class="serviceID_item">{{request.external_id2}}</div>
+                        </div>
+                        <br>
 
-                    </div>
-                </div>
-                <div class="col s4">
-                    <div class="customer_detail_class">
-                        <div class="detail_headings">SAD</div>
-                        <div>example_date</div>
-                    </div>
-                </div>
+                        <div class="row">
+                            <div class="col s4">
+                                <div class="customer_detail_class">
+                                    <div class="detail_headings">Customer</div>
+                                    <div>{{request.customer_name}}</div>
+                                </div>
+                            </div>
+                            <div class="col s4">
+                                <div class="customer_detail_class">
+                                    <div class="detail_headings">State</div>
+                                    <div>example_state</div>
 
+                                </div>
+                            </div>
+                            <div class="col s4">
+                                <div class="customer_detail_class">
+                                    <div class="detail_headings">SAD</div>
+                                    <div>{{request.sadDate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+</html>

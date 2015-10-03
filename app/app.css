@@ -44,6 +44,9 @@
 .ng-scope{
   background-color: #F7F7F7;
 }
+.row.ng-scope{
+  height: 1px;
+}
 .nav-wrapper{
   background-image: url(overview/img/header.gif);
   height:56px;
@@ -51,7 +54,15 @@
 .brand-logo{
   margin-left: 55px;
 }
-
+div.row.ng-scope{
+  z-index: 5;
+}
+.cover_container{
+  background-color: #F7F7F7;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+}
 /* CSS für ganzes Panel ---------------------------------------------------------*/
 
 .card-panel{
@@ -136,10 +147,10 @@ select div{
   line-height: normal;
 }
 .dropdown-content li > a, .dropdown-content li > span{
-  font-size: 16px;
+  font-size: 14px;
   color: #3A67B4;
   display: block;
-  height: 40px;
+  height: 35px;
   line-height: normal;
 }
 .dropdown-content li > a, .dropdown-content li > span:hover{
@@ -210,6 +221,7 @@ select div{
   font-size: 30px;
   position: fixed;
   width: 100%;
+  height: 70px;
 }
 .serviceID_details div{
   z-index: 10;
@@ -228,6 +240,7 @@ select div{
 #detailspan{
   font-size: 14px;
   font-weight: bold;
+  margin-left: 10px;
 }
 .detail_headings{
   font-weight: bold;
@@ -237,15 +250,53 @@ select div{
   float: left;
   padding-right: 60px;
   font-size: 10px;
+  margin-top: 0px;
 }
 .divider{
   background-color: #3A67B4;
-  overflow: hidden;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  z-index: 1;
 }
 #details_header_section{
-  height: 80px;
+  background-color: #F7F7F7;
+  height: 75px;
+  z-index: 10;
 }
+.section{
+  z-index: 2;
+}
+
+
+
+
+
+
+/* CSS für Footer -----------------------------------------------------------------*/
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+footer.page-footer{
+  background-color: #3A67B4;
+  z-index: 12;
+}
+.footer-copyright{
+  margin-left: 0px;
+  background-color: #3A67B4;
+}
+.footer-copyright span{
+  margin-left: 55px;
+  font-size: 12px;
+}
+footer.page-footer .footer-copyright{
+  height: 10px;
+  line-height: 10px;
+}
+
+
 
 

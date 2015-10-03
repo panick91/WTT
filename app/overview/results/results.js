@@ -5,7 +5,7 @@
 
 angular.module('wtt.results', [])
 
-    .controller('ResultsCtrl', function($scope,$http,$location) {
+    .controller('ResultsCtrl', function($scope,$http,$location,$state) {
         $scope.requestData = [];
 
         $scope.init = function(){
@@ -15,4 +15,21 @@ angular.module('wtt.results', [])
         }
 
         $scope.init();
-    });
+    })
+    .controller('AppCtrl', ["$scope","$state", function ($scope,$state) {
+        // Standard Ansicht Definieren
+        $scope.moduleState = 'list';
+        // ShowDetail Funktion
+        $scope.showDetail = function (data) {
+            $scope.moduleData = data;
+            $scope.moduleState = 'details';
+            $state.go("detail");
+        };
+
+        // ListView Funktion (Zurück Button)
+        $scope.showList = function (data) {
+            $scope.modulData = data;
+            $scope.moduleState = 'list';
+            $state.go("home");
+
+        }}]);

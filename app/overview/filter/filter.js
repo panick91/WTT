@@ -5,7 +5,7 @@
 
 angular.module('wtt.filter', [])
 
-    .controller('FilterCtrl', function($scope,$http,$location) {
+    .controller('FilterCtrl', function($scope,$state,$http,$location) {
         $scope.requestData = [];
 
         $scope.init = function(){

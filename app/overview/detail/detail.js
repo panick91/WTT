@@ -9,7 +9,7 @@ angular.module('wtt.detail', ['ui.materialize'])
 
         $scope.requestData = [];
 
-        $scope.init = function () {
+        $scope.init = function ($state) {
             //$state.go('home.filter');
 
         }
