@@ -182,6 +182,7 @@ select div{
   cursor: pointer;
 }
 #results_panel:first-of-type{
+  margin-top: 30px;
 }
 .value_class:first-of-type{
   padding-top: 80px;
