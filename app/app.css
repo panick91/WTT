@@ -1,301 +1,294 @@
 /* app css stylesheet */
 
 .menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
 }
 
 .menu:before {
-  content: "[";
+    content: "[";
 }
 
 .menu:after {
-  content: "]";
+    content: "]";
 }
 
 .menu > li {
-  display: inline;
+    display: inline;
 }
 
 .menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+    content: "|";
+    padding-right: 0.3em;
 }
 
 .menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+    content: "";
+    padding: 0;
 }
-.teal-text{
-  font-size: xx-large;
+
+.teal-text {
+    font-size: xx-large;
 }
 
 /* CSS für Grundgerüst ---------------------------------------------------------*/
-.top_nav{
-  float: left;
-  position:fixed;
+.content{
+    padding-left: 30%;
 }
-.top_nav a{
-  color: #3A67B4;
-  position: fixed;
+
+.top_nav {
+    float: left;
+    position: fixed;
 }
-.ng-scope{
-  background-color: #F7F7F7;
+
+.top_nav a {
+    color: #3A67B4;
+    position: fixed;
 }
-.row.ng-scope{
-  height: 1px;
+
+.side-nav{
+    top: auto;
+    z-index: auto;
+    width: 30%;
 }
-.nav-wrapper{
-  background-image: url(overview/img/header.gif);
-  height:56px;
+
+.ng-scope {
+    background-color: #F7F7F7;
 }
-.brand-logo{
-  margin-left: 55px;
+
+.nav-wrapper {
+    background-image: url(resources/img/header.gif);
+    background-position-y: center;
+    height: 56px;
 }
-div.row.ng-scope{
-  z-index: 5;
+
+.brand-logo {
+    margin-left: 55px;
 }
-.cover_container{
-  background-color: #F7F7F7;
-  width: 100%;
-  height: 50px;
-  position: fixed;
-}
+
+/*.cover_container {*/
+    /*background-color: #F7F7F7;*/
+    /*width: 100%;*/
+    /*height: 50px;*/
+    /*position: fixed;*/
+/*}*/
+
 /* CSS für ganzes Panel ---------------------------------------------------------*/
 
-.card-panel{
-  border: transparent;
-}
-.card-panel.ng-scope{
-  background-color: white;
-}
+
+/*.card-panel.ng-scope {*/
+    /*background-color: white;*/
+/*}*/
 
 /* CSS für Filter----------------------------------------------------------------- */
 
-#filter_panel{
-  /*margin-top: 60px;*/
-  padding-top: 0px;
-  box-shadow: none;
-  background-color: #F7F7F7;
-  border: solid #3A67B4;
-  border-radius:0px;
-  border-width: 0px 4px 0px 0px;
-  height: 100%;
-  position: fixed;
-  width: 33%;
+.side-nav{
+    background:none;
+    box-shadow:none;
 }
-.card-panel div{
-  margin-top: 0px;
-  border: transparent;
+
+.side-nav>div{
+    padding: 30px 0;
+    height:90vh;
 }
-input[type=text]{
-  color: #0050A0;
-  font-size: 16px;
-  border: 2px solid #3A67B4;
-  background-color: #FFFFFF;
-  height: 30px;
-  padding: 3px;
-  border-radius: 20px;
-  line-height: normal;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+.side-nav>div>form{
+    height: 100%;
+    border-right: solid #3A67B4;
 }
+
+.input-field{
+    margin-top:0;
+}
+
+.input-field>input{
+    height:40px;
+}
+
+input[type=text],
 input[type=text]:focus:not([readonly]){
-  border-bottom: 2px solid #3A67B4;
-  box-shadow: 2px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-sizing:border-box;
+    color: #0050A0;
+    border: 2px solid #3A67B4;
+    background-color: #FFFFFF;
+    padding: 0px 15px;
+    border-radius: 20px;
+    box-shadow: none;
 }
-input[type=text].valid{
-  border-bottom: 2px solid lightgrey;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+.select-wrapper input.select-dropdown {
+    color: #3A67B4;
+    font-size: 16px;
+    border: 2px solid #3A67B4;
+    padding: 0 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    background: white;
+    line-height: normal;
 }
-select div{
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 30px;
-  border: 1px solid rgba(0,0,0,0.15);
-  box-shadow: 0 1px 1px rgba(50,50,50,0.1);
-  cursor: pointer;
-  outline: none;
-  font-weight: bold;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+.dropdown-content {
+    border-radius: 20px;
+    border: 2px solid #3A67B4;
+    background-color: white;
+    line-height: normal;
 }
-.select-wrapper input.select-dropdown{
-  color: #3A67B4;
-  font-size: 16px;
-  border: 2px solid #3A67B4;
-  height: 30px;
-  padding: 3px;
-  border-radius: 20px;
-  cursor: pointer;
-  width: 100%;
-  background: white;
-  line-height: normal;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+.dropdown-content li>span{
+    color:#3A67B4;
 }
-.row .col.m10 {
-  width: 100%;
-  margin-left: 0;
+
+.btn {
+    background-color: #3A67B4 !important;
+    border-radius: 20px;
 }
-.dropdown-content{
-  border-radius: 20px;
-  border: 2px solid #3A67B4;
-  background-color: white;
-  line-height: normal;
-}
-.dropdown-content li > a, .dropdown-content li > span{
-  font-size: 14px;
-  color: #3A67B4;
-  display: block;
-  height: 35px;
-  line-height: normal;
-}
-.dropdown-content li > a, .dropdown-content li > span:hover{
-  background-color: #F7F7F7;
-  border-left: none;
-  border-right:none;
-  line-height: normal;
-  font-weight: bold;
-}
-.btn{
-  background-color: #3A67B4;
-  border-radius: 20px;
-  margin-left: -120%;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-.btn div{
-  margin-left: 0px;
-}
-.btn:hover{
-  background-color: #3A67B4;
-  box-shadow: 4px;
+
+.btn:hover {
+    background-color: #3A67B4;
+    box-shadow: 4px;
 }
 
 /* CSS für Results-----------------------------------------------------------------*/
-#results_panel{
-  border: 2px solid #3A67B4;
-  border-radius: 8px;
-  height: 130px;
-  cursor: pointer;
+
+.results{
+    padding-top:20px;
 }
-#results_panel:first-of-type{
-  margin-top: 30px;
+
+.request {
+    border: 2px solid #3A67B4;
+    border-radius: 8px;
+    height: 130px;
+    cursor: pointer;
 }
-.value_class:first-of-type{
-  padding-top: 80px;
+
+/*#results_panel:first-of-type {*/
+    /*margin-top: 30px;*/
+/*}*/
+
+.value_class:first-of-type {
+    padding-top: 80px;
 }
-.value_class{
-  float: left;
-  padding-right: 60px;
+
+.value_class {
+    float: left;
+    padding-right: 60px;
 }
 
 /* CSS für Details -----------------------------------------------------------------*/
-#details_panel{
-  padding-top: 0px;
-  box-shadow: none;
-  background-color: #F7F7F7;
-  border: none;
-  height: 100%;
-}
-#back_btn{
-  content: url(overview/detail/img/back_btn.png);
-  height: 40px;
-  width: 40px;
-  -moz-transform:rotate(180deg); /* Firefox 3.6 Firefox 4 */
-  -webkit-transform:rotate(180deg); /* Safari */
-  -o-transform:rotate(180deg); /* Opera */
-  -ms-transform:rotate(180deg); /* IE9 */
-  transform:rotate(180deg); /* W3C */
-  float: left;
-  margin-top: 5px;
-  cursor: pointer;
-  position: fixed;
-  z-index: 5; /*für cursor*/
-}
-.serviceID_details{
-  background-color: #F7F7F7;
-  float: left;
-  padding-left: 50px;
-  font-size: 30px;
-  position: fixed;
-  width: 100%;
-  height: 70px;
-}
-.serviceID_details div{
-  z-index: 10;
-}
-.detail_container{
-  height: 150px;
-  z-index: 10;
-}
-#timeline_container{
-  display: inline-block;
-  margin-top: 70px;
-  border-top: none;
-  width: 100%;
-  z-index: 3;
-}
-#detailspan{
-  font-size: 14px;
-  font-weight: bold;
-  margin-left: 10px;
-}
-.detail_headings{
-  font-weight: bold;
-  float: left;
-}
-.customer_detail_class{
-  float: left;
-  padding-right: 60px;
-  font-size: 10px;
-  margin-top: 0px;
-}
-.divider{
-  background-color: #3A67B4;
-  z-index: 1;
-}
-#details_header_section{
-  background-color: #F7F7F7;
-  height: 75px;
-  z-index: 10;
-}
-.section{
-  z-index: 2;
+#details_panel {
+    padding-top: 0px;
+    box-shadow: none;
+    background-color: #F7F7F7;
+    border: none;
+    height: 100%;
 }
 
+.back-button {
+    content: url(resources/img/back_btn.png);
+    height: 45px;
+    float: left;
+    cursor: pointer;
+    margin-right: 10px;
+}
 
+.request-title {
+    background-color: #F7F7F7;
+    font-size: 30px;
+}
 
+.detail-container {
+    padding: 0 10px;
+}
 
+.details{
+    padding-top: 95px;
+}
 
+#timeline_container {
+    display: inline-block;
+    margin-top: 70px;
+    border-top: none;
+    width: 100%;
+    z-index: 3;
+}
+
+#detailspan {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.detail_headings {
+    font-weight: bold;
+    float: left;
+}
+
+.customer_detail_class {
+    float: left;
+    padding-right: 60px;
+    font-size: 10px;
+    margin-top: 0px;
+}
+
+.divider {
+    background-color: #3A67B4;
+    z-index: 1;
+}
+
+.request-title-container {
+    position: fixed;
+    width: 100%;
+    background-color: #F7F7F7;
+    padding: 0;
+}
+
+.request-title-container>div{
+    padding-top: 30px;
+}
+
+.section {
+    z-index: 2;
+}
 
 /* CSS für Footer -----------------------------------------------------------------*/
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-main {
-  flex: 1 0 auto;
+footer.page-footer {
+    background-color: #3A67B4;
+    padding-top: 0;
+    z-index: 12;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
 }
-footer.page-footer{
-  background-color: #3A67B4;
-  z-index: 12;
+
+.footer-copyright {
+    margin-left: 0px;
+    background-color: #3A67B4;
 }
-.footer-copyright{
-  margin-left: 0px;
-  background-color: #3A67B4;
+
+.footer-copyright span {
+    margin-left: 55px;
+    font-size: 12px;
 }
-.footer-copyright span{
-  margin-left: 55px;
-  font-size: 12px;
+
+footer.page-footer .footer-copyright {
+    height: 25px;
 }
-footer.page-footer .footer-copyright{
-  height: 10px;
-  line-height: 10px;
+
+.footer-copyright > .container {
+    line-height: 25px;
+    max-width: 100%;
+    width: 100%;
+    margin: 2px 20px;
+    font-size: 12px;
 }
 
 

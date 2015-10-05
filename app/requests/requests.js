@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('wtt.overview', ['ui.materialize'])
+angular.module('wtt.requests', ['ui.materialize'])
 
-    .controller('OverviewCtrl', function ($scope, $state, $http, $location) {
+    .controller('RequestsCtrl', function ($scope, $state, $http, $location) {
 
         $scope.requestData = [];
 
