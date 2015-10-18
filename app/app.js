@@ -6,7 +6,8 @@ angular.module('wtt', [
     'wtt.requests',
     'wtt.detail',
     'wtt.results',
-    'wtt.version'
+    'wtt.version',
+    'wtt.deviations'
 ]).run(
     ['$rootScope', '$state', '$stateParams',
         function ($rootScope, $state, $stateParams) {
@@ -39,8 +40,17 @@ angular.module('wtt', [
                 })
                 .state('requests.details', {
                     url: '/{requestId:[0-9]*}',
-                    templateUrl: 'requests/detail/detail.html',
-                    controller: 'DetailCtrl'
+
+                    views: {
+                        '': {
+                            templateUrl: 'requests/detail/detail.html',
+                            controller: 'DetailCtrl',
+                        },
+                        'deviations@requests.details': {
+                            templateUrl: 'requests/detail/deviations.html',
+                            controller: 'DeviationsCtrl',
+                        }
+                    }
                     //params: {
                     //    filter: 'test'
                     //}

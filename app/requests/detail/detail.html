@@ -1,79 +1,61 @@
 <div class="detail-container">
     <div class="request-title-container">
         <div>
-            <div>
-                <a ui-sref="requests.results" class="back-button"></a>
-            </div>
+            <a ui-sref="requests.results" class="back-button"></a>
+
             <div class="request-title">{{requestData.name}}</div>
+            <div class="divider"></div>
         </div>
     </div>
-    <div class="details col s12">
-        <div class="divider"></div>
+    <div class="details">
         <div class="section">
-            <h5>Section 1</h5>
-
-            <p>Timeline</p>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-            <div class="row">
-                <div id="detailspan">Details</div>
-                <div class="col s4">
-                    <div class="customer_detail_class">
-                        <div class="detail_headings">Customer</div>
-                        <div>example_name</div>
-                        <div>Max Muster</div>
-                        <div>Musterstreet 2</div>
-                        <div>8050 Muster</div>
-                        <div>044 567 67 67</div>
-                    </div>
-                </div>
-                <div class="col s4">
-                    <div class="customer_detail_class">
-                        <div class="detail_headings">Responsible</div>
-                        <div>Name</div>
-                        <div>Function</div>
-                    </div>
-                </div>
-                <div class="col s4">
-                    <div class="customer_detail_class">
-                        <div class="detail_headings">Service Type</div>
-                        <div>New Installation</div>
-                    </div>
-                </div>
+            <h5>Timeline</h5>
+            <div>
 
             </div>
         </div>
         <div class="divider"></div>
         <div class="section">
-            <h5>Section 3</h5>
+            <h5>Information</h5>
 
-            <p>Stuff</p>
+            <div class="row">
+                <div class="col m4">
+                    <h6>Customer</h6>
+                    <div>{{requestData.customer.name}}</div>
+                    <div>{{requestData.customer.address}}</div>
+                    <div>{{requestData.customer.address2}}</div>
+                    <div>{{requestData.customer.city}}</div>
+                    <div>{{requestData.customer.phoneNumber}}</div>
+                </div>
+                <div class="col m4">
+                    <h6>Responsible person</h6>
+                    <div>Name</div>
+                    <div>Function</div>
+                </div>
+                <div class="col m4">
+                    <h6>Project period</h6>
+                    <div>{{requestData.start_dt | date : 'dd.mm.yyyy'}} - {{requestData.end_dt | date : 'dd.mm.yyyy'}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m4">
+                    <h6>Service type</h6>
+                    <div>New Installation</div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <h5>Statistics</h5>
+
+            <div ui-view="deviations"></div>
 
         </div>
         <div class="divider"></div>
         <div class="section">
-            <h5>Section 3</h5>
+            <h5>History</h5>
 
-            <p>Stuff</p>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-            <h5>Section 3</h5>
-
-            <p>Stuff</p>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-            <h5>Section 3</h5>
-
-            <p>Stuff</p>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-            <h5>Section 3</h5>
-
-            <p>Stuff</p>
+            <p></p>
         </div>
     </div>
 </div>
