@@ -15,10 +15,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css">
     <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
 
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="svg.css">
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
     <base href="/WTT/app/">
 </head>
@@ -27,17 +29,20 @@
 <div class="navbar-fixed">
     <nav class="blue lighten-4">
         <div class="nav-wrapper">
+            <a href="#" data-activates="filter" class="button-collapse"><i class="material-icons">menu</i></a>
             <a ui-sref="requests.results" class="brand-logo">Workflow Tracking Tool</a>
         </div>
     </nav>
 </div>
 
-<main ui-view></main>
+<div class="container">
 
-$state = {{$state.current.name}}
-$stateParams = {{$stateParams}}
-$state full url = {{ $state.$current.url.source }}
+    <main ui-view></main>
 
+    <!--$state = {{$state.current.name}}-->
+    <!--$stateParams = {{$stateParams}}-->
+    <!--$state full url = {{ $state.$current.url.source }}-->
+</div>
 <footer class="page-footer">
     <div class="footer-copyright">
         <div class="container">

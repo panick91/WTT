@@ -7,8 +7,7 @@ angular.module('wtt.requests', ['ui.materialize'])
         $scope.requestData = [];
 
         $scope.init = function () {
-            //$state.go('home.filter');
-
+            $('.button-collapse').sideNav();
         }
 
         $scope.init();

@@ -18,6 +18,8 @@ angular.module('wtt', [
             // to active whenever 'contacts.list' or one of its decendents is active.
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
+
+            //init();
         }
     ]
 )
@@ -57,3 +59,10 @@ angular.module('wtt', [
                 })
             //$locationProvider.html5Mode(true);
         }]);
+
+(function($){
+    $(function(){
+
+
+    }); // end of document ready
+})(jQuery); // end of jQuery name space

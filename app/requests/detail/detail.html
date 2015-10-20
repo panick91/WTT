@@ -9,38 +9,103 @@
     </div>
     <div class="details">
         <div class="section">
-            <h5>Timeline</h5>
-            <div>
-
+            <div class="svg-container detail-timeline">
+                <svg version="1.1" viewBox="0 0 500 70" preserveAspectRatio="xMinYMin meet" class="svg-content">
+                    <defs>
+                        <marker
+                                id='head'
+                                orient="auto"
+                                markerWidth='2'
+                                markerHeight='2'
+                                refX='0.1'
+                                refY='1'>
+                            <!-- triangle pointing right (+x) -->
+                            <path d='M0,0 V2 L1,1 Z' fill="gray"/>
+                        </marker>
+                    </defs>
+                    <g class="milestone">
+                        <rect x="0" class="milestone-rect" height="50px" width="100px"></rect>
+                        <text x="50" y="1.2em">Planning Phase</text>
+                        <!--<circle r="20" stroke-width="2" color="white" x="50" y="30"></circle>-->
+                        <image x="40" y="25" width="20" height="20" xlink:href="resources/img/tick.svg"></image>
+                    </g>
+                    <line
+                            x1="105"
+                            y1="25"
+                            x2="115"
+                            y2="25"
+                            id='arrow-line'
+                            marker-end='url(#head)'
+                            fill='none' stroke='gray'
+                            style="stroke-width:10"
+                            />
+                    <g class="milestone">
+                        <rect x="130" class="milestone-rect"  height="50px" width="100px"></rect>
+                        <text x="180" y="1.2em">Start Order</text>
+                        <image x="170" y="25" width="20" height="20" xlink:href="resources/img/empty_tick.svg"></image>
+                    </g>
+                    <line
+                            x1="235"
+                            y1="25"
+                            x2="245"
+                            y2="25"
+                            id='arrow-line'
+                            marker-end='url(#head)'
+                            fill='none' stroke='gray'
+                            style="stroke-width:10"
+                            />
+                    <g class="milestone">
+                        <rect x="260" class="milestone-rect" height="50px" width="100px"></rect>
+                        <text x="310" y="1.2em">Equipment Installation</text>
+                        <image x="300" y="25" width="20" height="20" xlink:href="resources/img/empty_tick.svg"></image>
+                    </g>
+                    <line
+                            x1="365"
+                            y1="25"
+                            x2="375"
+                            y2="25"
+                            id='arrow-line'
+                            marker-end='url(#head)'
+                            fill='none' stroke='gray'
+                            style="stroke-width:10"
+                            />
+                    <g class="milestone">
+                        <rect x="390" class="milestone-rect" height="50px" width="100px"></rect>
+                        <text x="440" y="1.2em">Sad / End</text>
+                    </g>
+                </svg>
             </div>
         </div>
         <div class="divider"></div>
-        <div class="section">
+        <div class="section information">
             <h5>Information</h5>
 
             <div class="row">
-                <div class="col m4">
+                <div class="col s12 m4">
                     <h6>Customer</h6>
-                    <div>{{requestData.customer.name}}</div>
-                    <div>{{requestData.customer.address}}</div>
-                    <div>{{requestData.customer.address2}}</div>
-                    <div>{{requestData.customer.city}}</div>
-                    <div>{{requestData.customer.phoneNumber}}</div>
+
+                    <div class="info">{{requestData.customer.name}}</div>
+                    <div class="info">{{requestData.customer.address}}</div>
+                    <div class="info">{{requestData.customer.address2}}</div>
+                    <div class="info">{{requestData.customer.city}}</div>
+                    <div class="info">{{requestData.customer.phoneNumber}}</div>
                 </div>
-                <div class="col m4">
+                <div class="col s12 m4">
                     <h6>Responsible person</h6>
-                    <div>Name</div>
-                    <div>Function</div>
+
+                    <div class="info">Name</div>
+                    <div class="info">Function</div>
                 </div>
-                <div class="col m4">
+                <div class="col s12 m4">
                     <h6>Project period</h6>
-                    <div>{{requestData.start_dt | date : 'dd.mm.yyyy'}} - {{requestData.end_dt | date : 'dd.mm.yyyy'}}</div>
+
+                    <div class="info">{{requestData.start_dt | date : 'dd.mm.yyyy'}} - {{requestData.end_dt | date : 'dd.mm.yyyy'}}
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col m4">
+                <div class="col s12 m4">
                     <h6>Service type</h6>
-                    <div>New Installation</div>
+
+                    <div class="info">New Installation</div>
                 </div>
             </div>
         </div>

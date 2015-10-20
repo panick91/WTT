@@ -1,32 +1,32 @@
 <div class="">
-    <div class="side-nav fixed">
+    <div id="filter" class="side-nav fixed">
         <div>
             <form>
                 <div>
                     <div class="row">
-                        <div class="col m12 s12">
+                        <div class="col s12">
                             <div class="input-field">
                                 <input placeholder="Service ID" type="text" id="service_id"
                                        ng-model="search_param.service_id"/>
                             </div>
                         </div>
-                        <div class="col m12 s12">
+                        <div class="col s12">
                             <div class="input-field">
                                 <input placeholder="Customer" type="text" id="customer_name"
                                        ng-model="search_param.customer_name"/>
                             </div>
                         </div>
-                        <div class="col m12 s12">
+                        <div class="col s12">
                             <div class="input-field">
                                 <input placeholder="Site ID" type="text" id="site_id" ng-model="search_param.site_id"/>
                             </div>
                         </div>
-                        <div class="col m12 s12">
+                        <div class="col s12">
                             <div class="input-field">
                                 <input placeholder="GV-Nr." type="text" id="gv_nr" ng-model="search_param.gv_nr"/>
                             </div>
                         </div>
-                        <div class="col m10 s12">
+                        <div class="col s12">
                             <select class="selectmenu" id="status" ng-model="search_param.status" material-select>
                                 <option value="" selected>All</option>
                                 <option value="volvo">Volvo</option>
@@ -35,10 +35,8 @@
                                 <option value="audi">Audi</option>
                             </select>
                         </div>
-                        <div class="row">
-                            <div class="col m4">
-                                <button ng-click="search()" class="btn">Search</button>
-                            </div>
+                        <div class="col m4">
+                            <button ng-click="search()" class="btn">Search</button>
                         </div>
                     </div>
                 </div>
