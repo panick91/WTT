@@ -27,12 +27,9 @@
                             </div>
                         </div>
                         <div class="col s12">
-                            <select class="selectmenu" id="status" ng-model="search_param.status" material-select>
-                                <option value="" selected>All</option>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
+                            <select class="selectmenu" id="status" material-select>
+                                <option value="" selected disabled>Choose a status</option>
+                                <option ng-repeat="(key, status) in projectStatus" on-finish-render="ngSelectRepeatFinished" value="">{{status}}</option>
                             </select>
                         </div>
                         <div class="col m4">

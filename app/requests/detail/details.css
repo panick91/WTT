@@ -1,0 +1,66 @@
+/* CSS for details title ---------------------------------------------------------*/
+.request-title-container {
+    position: fixed;
+    width: calc(85% - 20px);
+    background-color: #F7F7F7;
+    padding: 0;
+    z-index: 100;
+}
+
+.request-title-container > div {
+    padding-top: 30px;
+}
+
+.request-title {
+    background-color: #F7F7F7;
+    font-size: 30px;
+    height: 55px;
+    padding-bottom: 10px;
+}
+
+.back-button {
+    content: url(../../resources/img/back_btn.png);
+    height: 45px;
+    float: left;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+@media only screen and (min-width: 993px) {
+
+    .request-title-container{
+        width: calc(70% - 280px);
+    }
+}
+
+/* CSS for detail content -----------------------------------------------------------------*/
+.detail-container {
+    padding: 0 10px 0 0;
+}
+
+.details {
+    padding-top: 95px;
+}
+
+.divider {
+    background-color: #3A67B4;
+}
+
+.information .col {
+    min-height: 160px;
+}
+
+.information h6{
+    font-size: 0.9rem;
+}
+.information .info{
+    color: #3A67B4;
+}
+
+/* CSS for statistics -----------------------------------------------------------------*/
+.ct-series-a .ct-bar {
+    /* Colour of your bars */
+    stroke: #4eb461;
+    stroke-width: 5%;
+}

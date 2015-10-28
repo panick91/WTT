@@ -1,31 +1,33 @@
-<div class="row results">
-    <div class="col s12">
-        <a ng-repeat="request in requestData.data" ui-sref="requests.details({requestId:{{request.id}}})">
+<ul id="results" class="row results">
+    <li ng-repeat="request in requestData.data" on-finish-render="ngRepeatFinished">
+        <a ui-sref="requests.details({requestId:{{request.id}}})">
             <div class="card-panel request">
-                <div class="serviceID">
-                    <div class="serviceID_item">{{request.external_id2}}</div>
+                <div class="row">
+                    <div class="col s12"><h5>{{request.external_id2}}</h5></div>
                 </div>
                 <div class="row">
-                    <div class="col s4">
-                        <div class="customer_detail_class">
-                            <div class="detail_headings">Customer</div>
-                            <div>{{request.customer_name}}</div>
+                    <div class="col s12 m6">
+                        <label>Customer</label>
+
+                        <div class="info" title="{{request.customer.name}}">{{request.customer.name}}</div>
+                    </div>
+                    <div class="col s12 m3">
+                        <label>State</label>
+
+                        <div class="info" title="{{request.currentWorkflowState.stateText}}">
+                            {{request.currentWorkflowState.stateText}}
                         </div>
                     </div>
-                    <div class="col s4">
-                        <div class="customer_detail_class">
-                            <div class="detail_headings">State</div>
-                            <div>example_state</div>
-                        </div>
-                    </div>
-                    <div class="col s4">
-                        <div class="customer_detail_class">
-                            <div class="detail_headings">SAD</div>
-                            <div>{{request.sadDate}}</div>
+                    <div class="col s12 m3">
+                        <label>SAD</label>
+
+                        <div class="info" title="{{request.sadDate.date | date : 'dd.MM.yyyy'}}">{{request.sadDate.date
+                            | date : 'dd.MM.yyyy'}}
                         </div>
                     </div>
                 </div>
             </div>
         </a>
-    </div>
-</div>
+    </li>
+    <div id="test"></div>
+</ul>

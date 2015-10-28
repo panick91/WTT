@@ -1,0 +1,27 @@
+.row.results {
+    padding: 20px 0;
+    margin-right: 10px;
+}
+
+ul.results>li{
+    opacity: 0;
+}
+
+.card-panel.request {
+    border: 2px solid #3A67B4;
+    border-radius: 8px;
+    cursor: pointer;
+    color: black;
+}
+
+.card-panel .info {
+    overflow: hidden;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    color: #3A67B4;
+}
+
+.card-panel h5{
+    margin-top: 0;
+}

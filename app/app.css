@@ -1,177 +1,19 @@
-body {
-    /*max-width: 1192px;*/
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
-
-/* app css stylesheet */
-
-.menu {
-    list-style: none;
-    border-bottom: 0.1em solid black;
-    margin-bottom: 2em;
-    padding: 0 0 0.5em;
-}
-
-.menu:before {
-    content: "[";
-}
-
-.menu:after {
-    content: "]";
-}
-
-.menu > li {
-    display: inline;
-}
-
-.menu > li:before {
-    content: "|";
-    padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-    content: "";
-    padding: 0;
-}
-
-.teal-text {
-    font-size: xx-large;
-}
-
 /* CSS für Grundgerüst ---------------------------------------------------------*/
-nav {
-    width: 100%;
-}
-
-@media only screen and (min-width: 601px) {
-    /*nav,*/
-    /*footer.page-footer,*/
-    .request-title-container {
-        width: 85% !important;
-    }
-
-    .request-title-container {
-        width: calc(85% - 20px) !important;
-    }
-
-}
-
-@media only screen and (min-width: 993px) {
-    nav,
-    footer.page-footer{
-        width: 70% !important;
-        margin: 0 auto;
-        left:0;
-        right:0;
-    }
-
-    .request-title-container {
-        width: 70% !important;
-    }
-
-    .content {
-        padding-left: 30%;
-    }
-
-    .request-title-container {
-        width: calc(47% - 20px) !important;
-    }
-
-    nav > .nav-wrapper {
-        background-image: url(resources/img/header.gif);
-    }
-
-    .side-nav{
-        position: relative !important;
-        float: left;
-        left: 0;
-        padding-left: 0;
-        width: 30%;
-        background: none !important;
-        box-shadow: none !important;
-    }
-    .side-nav>div{
-        width: 22%;
-    }
-
-    /*#filter {*/
-        /*width: 70%;*/
-        /*background: #f7f7f7;*/
-        /*left: 0;*/
-        /*float: left;*/
-    /*}*/
-}
-
-.content {
-    padding-left: 35%;
-}
-
-/*.top_nav {*/
-/*float: left;*/
-/*position: fixed;*/
-/*}*/
-/*.top_nav a {*/
-/*color: #3A67B4;*/
-/*position: fixed;*/
-/*}*/
-.side-nav {
-    padding-left: 20px;
-    top: auto;
-    background: #f7f7f7;
-    z-index: 1000;
-    /*width: 250px;*/
-    overflow: visible;
-}
-
-.side-nav > div {
-    width: 220px;
-    position: fixed;
-}
-
 .ng-scope {
     background-color: #F7F7F7;
 }
 
-.nav-wrapper {
-    background: #3A67B4;
-    background-position-y: center;
-    background-size: 100%;
-    height: 56px;
+.content {
+    padding-left: 0;
 }
 
-.brand-logo {
-    margin-left: 55px;
+@media only screen and (min-width: 993px) {
+    .content {
+        padding-left: 270px;
+    }
 }
 
-/*.cover_container {*/
-/*background-color: #F7F7F7;*/
-/*width: 100%;*/
-/*height: 50px;*/
-/*position: fixed;*/
-/*}*/
-/* CSS für ganzes Panel ---------------------------------------------------------*/
-/*.card-panel.ng-scope {*/
-/*background-color: white;*/
-/*}*/
-/* CSS für Filter----------------------------------------------------------------- */
-/*.side-nav {*/
-    /*background: none;*/
-    /*box-shadow: none;*/
-/*}*/
-
-.side-nav > div {
-    padding: 30px 0;
-    height: 90vh;
-}
-
-.side-nav > div > form {
-    height: 100%;
-    border-right: solid #3A67B4;
-    padding-right: 20px;
-}
-
+/* Inputs ---------------------------------------------------------*/
 .input-field {
     margin-top: 0;
 }
@@ -191,9 +33,13 @@ input[type=text]:focus:not([readonly]) {
     box-shadow: none;
 }
 
+.select-wrapper span.caret {
+    z-index: 1;
+    right: 20px;
+}
+
 .select-wrapper input.select-dropdown {
     color: #3A67B4;
-    font-size: 16px;
     border: 2px solid #3A67B4;
     padding: 0 15px;
     border-radius: 20px;
@@ -210,8 +56,17 @@ input[type=text]:focus:not([readonly]) {
     line-height: normal;
 }
 
+.dropdown-content li.disabled {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-content li.disabled > span {
+    color: grey;
+}
+
 .dropdown-content li > span {
     color: #3A67B4;
+    font-size: 1rem;
 }
 
 .btn {
@@ -224,121 +79,77 @@ input[type=text]:focus:not([readonly]) {
     box-shadow: 4px;
 }
 
-/* CSS für Results-----------------------------------------------------------------*/
-.results {
-    padding-top: 20px;
-}
-
-.request {
-    border: 2px solid #3A67B4;
-    border-radius: 8px;
-    height: 130px;
-    cursor: pointer;
-}
-
-/*#results_panel:first-of-type {*/
-/*margin-top: 30px;*/
-/*}*/
-.value_class:first-of-type {
-    padding-top: 80px;
-}
-
-.value_class {
-    float: left;
-    padding-right: 60px;
-}
-
-/* CSS für Details -----------------------------------------------------------------*/
-#details_panel {
-    padding-top: 0px;
-    box-shadow: none;
-    background-color: #F7F7F7;
-    border: none;
-    height: 100%;
-}
-
-.back-button {
-    content: url(resources/img/back_btn.png);
-    height: 45px;
-    float: left;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.request-title {
-    background-color: #F7F7F7;
-    font-size: 30px;
-    height: 55px;
-    padding-bottom: 10px;
-}
-
-.detail-container {
-    padding: 0 10px 0 0;
-}
-
-.details {
-    padding-top: 95px;
-}
-
-#timeline_container {
-    display: inline-block;
-    margin-top: 70px;
-    border-top: none;
+/* Navigation ---------------------------------------------------------*/
+nav {
     width: 100%;
-    z-index: 3;
 }
 
-#detailspan {
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 10px;
+nav .brand-logo {
+    margin-left: 0;
+    font-size: 1.5em;
 }
 
-.detail_headings {
-    font-weight: bold;
-    float: left;
+.nav-wrapper {
+    background: #3A67B4;
+    background-position-y: center;
+    background-size: 100%;
+    height: 56px;
 }
 
-.customer_detail_class {
-    float: left;
-    padding-right: 60px;
-    font-size: 10px;
-    margin-top: 0px;
+.side-nav {
+    padding-left: 20px;
+    top: auto;
+    background: #f7f7f7;
+    z-index: 1000;
+    overflow: visible;
 }
 
-.divider {
-    background-color: #3A67B4;
-    z-index: 1;
-}
-
-.request-title-container {
+.side-nav > div {
+    padding: 30px 0;
+    height: 90vh;
+    width: 220px;
     position: fixed;
-    width: 70%;
-    background-color: #F7F7F7;
-    padding: 0;
-    z-index: 100;
 }
 
-.request-title-container > div {
-    padding-top: 30px;
+.side-nav > div > form {
+    height: 100%;
+    padding-right: 20px;
+    border-right: none;
 }
 
-.section {
-    z-index: 2;
+@media only screen and (min-width: 993px) {
+    nav,
+    footer.page-footer {
+        width: 70% !important;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+
+    nav > .nav-wrapper {
+        background-image: url(resources/img/header.gif);
+    }
+
+    .side-nav {
+        position: relative !important;
+        float: left;
+        left: 0;
+        padding-left: 0;
+        width: 30%;
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    .side-nav > div {
+        width: 240px;
+    }
+
+    .side-nav > div > form {
+        border-right: solid #3A67B4;
+    }
 }
 
-.information .col {
-    min-height: 160px;
-}
-
-.information h6{
-    font-size: 0.9rem;
-}
-.information .info{
-    color: #3A67B4;
-}
-
-/* CSS für Footer -----------------------------------------------------------------*/
+/* Footer -----------------------------------------------------------------*/
 footer.page-footer {
     background-color: #3A67B4;
     padding-top: 0;
@@ -349,7 +160,7 @@ footer.page-footer {
 }
 
 .footer-copyright {
-    margin-left: 0px;
+    margin-left: 0;
     background-color: #3A67B4;
 }
 
@@ -368,46 +179,4 @@ footer.page-footer .footer-copyright {
     width: 100%;
     margin: 2px 20px;
     font-size: 12px;
-}
-
-/* CSS für Statistiken -----------------------------------------------------------------*/
-.ct-series-a .ct-bar {
-    /* Colour of your bars */
-    stroke: #4eb461;
-    stroke-width: 5%;
-}
-
-@media only screen and (max-width: 992px) {
-    nav .brand-logo {
-        margin-left: 0;
-        font-size: 1.5em;
-    }
-
-    .content {
-        padding-left: 0;
-
-    }
-
-    .detail-container {
-        padding-left: 10px;
-    }
-
-    .details {
-        padding-top: 75px;
-    }
-
-    .side-nav > div > form {
-        border-right: none;
-    }
-
-    /*.request-title-container {*/
-    /*width: 95%;;*/
-    /*}*/
-    .request-title {
-        height: 35px;
-    }
-
-    .back-button {
-        height: 30px;
-    }
 }
