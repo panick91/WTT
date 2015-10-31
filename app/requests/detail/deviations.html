@@ -1,2 +1,23 @@
-<div ng-show="data != null && data != ''" class="ct-chart ct-minor-seventh" id="example"></div>
-<span ng-show="data == null || data == ''">No data available yet!</span>
+<div ng-show="data != null && data != ''" class="ct-chart ct-minor-seventh" id="deviations">
+</div>
+<div ng-show="!loading && (data == null || data == '')">
+    <div>No data available yet!</div>
+</div>
+<div ng-show="loading">
+    <div class="center ">
+        <div class="preloader-wrapper small active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <div>Loading statistics...</div>
+    </div>
+</div>

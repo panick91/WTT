@@ -18,18 +18,13 @@
     padding-bottom: 10px;
 }
 
-.back-button {
-    content: url(../../resources/img/back_btn.png);
-    height: 45px;
-    float: left;
-    cursor: pointer;
-    margin-right: 10px;
+.request-title > a {
+    color: black;
 }
-
 
 @media only screen and (min-width: 993px) {
 
-    .request-title-container{
+    .request-title-container {
         width: calc(70% - 280px);
     }
 }
@@ -51,10 +46,11 @@
     min-height: 160px;
 }
 
-.information h6{
+.information h6 {
     font-size: 0.9rem;
 }
-.information .info{
+
+.information .info {
     color: #3A67B4;
 }
 
@@ -63,4 +59,62 @@
     /* Colour of your bars */
     stroke: #4eb461;
     stroke-width: 5%;
+}
+
+/* CSS for loading box -----------------------------------------------------------------*/
+.loading {
+    color: #3A67B4;
+    transition: all linear 0.5s;
+    overflow: hidden;
+    height: 250px;
+}
+
+.loading.ng-hide {
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.loading > .card {
+    height: 200px;
+    padding-top: 50px;
+}
+
+.loading .spinner-blue, .spinner-blue-only {
+    border-color: #3A67B4;
+}
+
+/* CSS for svg chart -----------------------------------------------------------------*/
+.svg-container.detail-timeline {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    /*padding-bottom: 100%;*/
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.detail-timeline .milestone > rect {
+    fill: #3A67B4;
+
+}
+
+.detail-timeline .milestone > text {
+
+    font-size: 0.7em;
+    fill: white;
+    text-anchor: middle;
+    alignment-baseline: middle;
+}
+
+
+.milestone {
+    color: white;
+    text-align:center;
+}
+
+.header {
+    height: 20px;
+    font-variant: small-caps;
+    font-size: 0.9rem;
 }

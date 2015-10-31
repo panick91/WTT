@@ -6,6 +6,7 @@ angular.module('wtt.deviations', ['ui.materialize'])
     .controller('DeviationsCtrl', function ($scope, $state, $http, $stateParams) {
 
         $scope.data = [];
+        $scope.loading = true;
 
         $scope.requestId = $stateParams.requestId;
         $scope.initDeviationChart = function initDeviationChart() {
@@ -34,7 +35,7 @@ angular.module('wtt.deviations', ['ui.materialize'])
                 }
             };
 
-            var chart = new Chartist.Bar('#example', data, options);
+            var chart = new Chartist.Bar('#deviations', data, options);
 
             /* Register listener to draw event of Chartist, so we can dynamically color our bars based on their value*/
             chart.on('draw', function (context) {
@@ -50,6 +51,7 @@ angular.module('wtt.deviations', ['ui.materialize'])
 
         $scope.init = function ($state) {
             $http.get('/api/1.0/orders/' + $scope.requestId + '/deviations').success(function (data) {
+                $scope.loading = false;
                 if (data != null && data != "") {
                     $scope.data = data;
                     $scope.initDeviationChart();

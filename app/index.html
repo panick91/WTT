@@ -13,6 +13,8 @@
     <title>Workflow Tracking Tool</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -53,19 +55,24 @@
     </div>
 </footer>
 
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/materialize/dist/js/materialize.js"></script>
-<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="bower_components/angular-materialize/src/angular-materialize.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/chartist/dist/chartist.min.js"></script>
 <script src="app.js"></script>
 
 
 <script src="requests/requests.js"></script>
-<script src="requests/detail/detail.js"></script>
 <script src="requests/results/results.js"></script>
+<script src="requests/results/infinite-scroll.js"></script>
+<script src="requests/results/requestService.js"></script>
+<script src="requests/detail/detail.js"></script>
 <script src="requests/detail/deviations.js"></script>
+<script src="requests/detail/requestDetailService.js"></script>
+<script src="requests/detail/timeline.js"></script>
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>

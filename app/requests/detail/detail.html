@@ -1,79 +1,39 @@
 <div class="detail-container">
     <div class="request-title-container">
         <div>
-            <a ui-sref="requests.results" class="back-button"></a>
-
-            <div class="request-title">{{requestData.name}}</div>
+            <div class="request-title">
+                <a ui-sref="requests.results">
+                    <i class="fa fa-arrow-circle-o-left fa-lg">
+                    </i>
+                </a>
+                {{service.requestData.name}}
+            </div>
             <div class="divider"></div>
         </div>
     </div>
     <div class="details">
+        <div ng-hide="!service.loading" class="section loading animate-hide">
+            <div class="card center ">
+                <div class="preloader-wrapper small active">
+                    <div class="spinner-layer spinner-blue-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Loading. Just a second...</h4>
+            </div>
+        </div>
+        <div ng-hide="!service.loading" class="divider "></div>
         <div class="section">
             <div class="svg-container detail-timeline">
-                <svg version="1.1" viewBox="0 0 500 70" preserveAspectRatio="xMinYMin meet" class="svg-content">
-                    <defs>
-                        <marker
-                                id='head'
-                                orient="auto"
-                                markerWidth='2'
-                                markerHeight='2'
-                                refX='0.1'
-                                refY='1'>
-                            <!-- triangle pointing right (+x) -->
-                            <path d='M0,0 V2 L1,1 Z' fill="gray"/>
-                        </marker>
-                    </defs>
-                    <g class="milestone">
-                        <rect x="0" class="milestone-rect" height="50px" width="100px"></rect>
-                        <text x="50" y="1.2em">Planning Phase</text>
-                        <!--<circle r="20" stroke-width="2" color="white" x="50" y="30"></circle>-->
-                        <image x="40" y="25" width="20" height="20" xlink:href="resources/img/tick.svg"></image>
-                    </g>
-                    <line
-                            x1="105"
-                            y1="25"
-                            x2="115"
-                            y2="25"
-                            id='arrow-line'
-                            marker-end='url(#head)'
-                            fill='none' stroke='gray'
-                            style="stroke-width:10"
-                            />
-                    <g class="milestone">
-                        <rect x="130" class="milestone-rect" height="50px" width="100px"></rect>
-                        <text x="180" y="1.2em">Start Order</text>
-                        <image x="170" y="25" width="20" height="20" xlink:href="resources/img/empty_tick.svg"></image>
-                    </g>
-                    <line
-                            x1="235"
-                            y1="25"
-                            x2="245"
-                            y2="25"
-                            id='arrow-line'
-                            marker-end='url(#head)'
-                            fill='none' stroke='gray'
-                            style="stroke-width:10"
-                            />
-                    <g class="milestone">
-                        <rect x="260" class="milestone-rect" height="50px" width="100px"></rect>
-                        <text x="310" y="1.2em">Equipment Installation</text>
-                        <image x="300" y="25" width="20" height="20" xlink:href="resources/img/empty_tick.svg"></image>
-                    </g>
-                    <line
-                            x1="365"
-                            y1="25"
-                            x2="375"
-                            y2="25"
-                            id='arrow-line'
-                            marker-end='url(#head)'
-                            fill='none' stroke='gray'
-                            style="stroke-width:10"
-                            />
-                    <g class="milestone">
-                        <rect x="390" class="milestone-rect" height="50px" width="100px"></rect>
-                        <text x="440" y="1.2em">Sad / End</text>
-                    </g>
-                </svg>
+                <div ui-view="timeline"></div>
             </div>
         </div>
         <div class="divider"></div>
@@ -84,11 +44,11 @@
                 <div class="col s12 m4">
                     <label>Customer</label>
 
-                    <div class="info">{{requestData.customer.name}}</div>
-                    <div class="info">{{requestData.customer.address}}</div>
-                    <div class="info">{{requestData.customer.address2}}</div>
-                    <div class="info">{{requestData.customer.city}}</div>
-                    <div class="info">{{requestData.customer.phoneNumber}}</div>
+                    <div class="info">{{service.requestData.customer.name}}</div>
+                    <div class="info">{{service.requestData.customer.address}}</div>
+                    <div class="info">{{service.requestData.customer.address2}}</div>
+                    <div class="info">{{service.requestData.customer.city}}</div>
+                    <div class="info">{{service.requestData.customer.phoneNumber}}</div>
                 </div>
                 <div class="col s12 m4">
                     <label>Responsible person</label>
@@ -99,7 +59,7 @@
                 <div class="col s12 m4">
                     <label>Project period</label>
 
-                    <div class="info">{{requestData.start_dt | date : 'dd.MM.yyyy'}} - {{requestData.end_dt | date :
+                    <div class="info">{{service.requestData.start_dt | date : 'dd.MM.yyyy'}} - {{service.requestData.end_dt | date :
                         'dd.MM.yyyy'}}
                     </div>
                 </div>

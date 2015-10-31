@@ -3,11 +3,13 @@
 // Declare app level module which depends on views, and components
 angular.module('wtt', [
     'ui.router',
+    'ngAnimate',
     'wtt.requests',
     'wtt.detail',
     'wtt.results',
     'wtt.version',
-    'wtt.deviations'
+    'wtt.deviations',
+    'wtt.detailTimeline',
 ]).run(
     ['$rootScope', '$state', '$stateParams',
         function ($rootScope, $state, $stateParams) {
@@ -51,6 +53,10 @@ angular.module('wtt', [
                         'deviations@requests.details': {
                             templateUrl: 'requests/detail/deviations.html',
                             controller: 'DeviationsCtrl',
+                        },
+                        'timeline@requests.details': {
+                            templateUrl: 'requests/detail/timeline.html',
+                            controller: 'DetailTimelineCtrl',
                         }
                     }
                     //params: {

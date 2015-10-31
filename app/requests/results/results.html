@@ -1,5 +1,5 @@
-<ul id="results" class="row results">
-    <li ng-repeat="request in requestData.data" on-finish-render="ngRepeatFinished">
+<ul id="results" class="row results" infinite-scroll>
+    <li ng-repeat="request in requests">
         <a ui-sref="requests.details({requestId:{{request.id}}})">
             <div class="card-panel request">
                 <div class="row">
@@ -29,5 +29,26 @@
             </div>
         </a>
     </li>
-    <div id="test"></div>
+    <li ng-show="requestService.loading">
+        <div class="center">
+            <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li ng-show="requestService.loading">
+        <div class="center">
+            No more
+        </div>
+    </li>
 </ul>
