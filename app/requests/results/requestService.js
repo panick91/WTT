@@ -4,7 +4,7 @@
 'use strict';
 
 /*
-    Shared service
+ Shared service
  */
 angular.module('wtt.requestService', [])
 
@@ -13,38 +13,71 @@ angular.module('wtt.requestService', [])
         var requestService = {};
 
         requestService.requests = [];
+        requestService.params = [];
         requestService.loading = false;
         requestService.isEnd = false;
 
-        requestService.loadRequests = function (url) {
-            if(!requestService.isEnd) {
-                requestService.loading = true;
-                $http.get(url).success(function (data) {
-                    requestService.requestData = data;
-                    if (data != null) {
+        requestService.empty = function () {
+            requestService.requests.length = 0;
+            requestService.isEnd = false;
+            requestService.params.length = 0;
+        };
 
-                        if(typeof(data.next_page_url) === typeof(undefined)) {
-                            requestService.isEnd = true;
-                        }
+        requestService.addParam = function (param) {
+            requestService.params.push(param);
+        };
 
-                        for (var index in requestService.requestData.data) {
-                            var request = requestService.requestData.data[index];
-                            if (request.sadDate !== null) {
-                                request.sadDate.date = new Date(request.sadDate.date);
-                            }
-                            if (request.currentWorkflowState.currentState === -1) {
-                                request.currentWorkflowState.stateText = "Not available";
-                            } else {
-                                request.currentWorkflowState.stateText = request.availableMilestones[request.currentWorkflowState.currentState];
-                            }
+        function getUrlWithParams(url) {
+            var urlWithParams = url;
 
-                            requestService.requests.push(request);
-                        }
-                        requestService.loading = false;
+            for (var i in requestService.params) {
+                if (requestService.params.hasOwnProperty(i)) {
+
+                    var param = requestService.params[i];
+
+                    if (urlWithParams.indexOf('?') > -1) {
+                        urlWithParams += '&';
+                    } else {
+                        urlWithParams += '?';
                     }
-                });
+                    urlWithParams += (param.key + '=' + param.value);
+                }
+            }
+
+            return urlWithParams;
+        };
+
+        requestService.loadFilteredRequests = function (url) {
+            if (!requestService.isEnd && !requestService.loading) {
+                requestService.loading = true;
+                $http.get(getUrlWithParams(url)).success(success);
             }
         };
+
+        function success(data) {
+            requestService.requestData = data;
+            if (data != null) {
+
+                if (data.next_page_url === undefined || data.next_page_url === null) {
+                    requestService.isEnd = true;
+                }
+
+                for (var index in requestService.requestData.data) {
+                    var request = requestService.requestData.data[index];
+                    if (request.sadDate !== null) {
+                        request.sadDate.date = new Date(request.sadDate.date);
+                    }
+                    if (request.currentWorkflowState.currentState === -1) {
+                        request.currentWorkflowState.stateText = "Not available";
+                    } else {
+                        request.currentWorkflowState.stateText = request.availableMilestones[request.currentWorkflowState.currentState].longName;
+                    }
+
+                    requestService.requests.push(request);
+                }
+                requestService.loading = false;
+            }
+        }
 
         return requestService;
     });

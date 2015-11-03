@@ -1,39 +1,43 @@
 <div class="">
     <div id="filter" class="side-nav fixed">
         <div>
-            <form>
+            <form ng-submit="submit()">
                 <div>
                     <div class="row">
                         <div class="col s12">
                             <div class="input-field">
                                 <input placeholder="Service ID" type="text" id="service_id"
-                                       ng-model="search_param.service_id"/>
+                                       ng-model="serviceId"/>
                             </div>
                         </div>
                         <div class="col s12">
                             <div class="input-field">
                                 <input placeholder="Customer" type="text" id="customer_name"
-                                       ng-model="search_param.customer_name"/>
+                                       ng-model="customer"/>
                             </div>
                         </div>
                         <div class="col s12">
                             <div class="input-field">
-                                <input placeholder="Site ID" type="text" id="site_id" ng-model="search_param.site_id"/>
+                                <input placeholder="Site ID" type="text" id="site_id" ng-model="siteId"/>
                             </div>
                         </div>
                         <div class="col s12">
                             <div class="input-field">
-                                <input placeholder="GV-Nr." type="text" id="gv_nr" ng-model="search_param.gv_nr"/>
+                                <input placeholder="GV-Nr." type="text" id="gv_nr" ng-model="gvNumber"/>
                             </div>
                         </div>
                         <div class="col s12">
-                            <select class="selectmenu" id="status" material-select>
-                                <option value="" selected disabled>Choose a status</option>
-                                <option ng-repeat="(key, status) in projectStatus" on-finish-render="ngSelectRepeatFinished" value="">{{status}}</option>
+                            <select class="selectmenu"
+                                    name="status"
+                                    title="status"
+                                    id="status"
+                                    data-on-finish-render
+                                    data-ng-model="status"
+                                    data-ng-options="s.longName for s in projectStatus track by s.key">
                             </select>
                         </div>
                         <div class="col m4">
-                            <button ng-click="search()" class="btn">Search</button>
+                            <input type="submit" value="Search" class="btn"/>
                         </div>
                     </div>
                 </div>

@@ -10,22 +10,14 @@ angular.module('wtt.infinite-scroll', ['wtt.results'])
             restrict: 'A',
             link: function (scope, element, attr) {
 
-                var list = element[0];
+                var end = $('html')[0];
 
                 angular.element($window).bind('scroll', function () {
 
                     var window = angular.element($window);
-                    if(window.scrollTop() + window.innerHeight() + 100 > list.scrollHeight){
-                        requestService.loadRequests(requestService.requestData.next_page_url);
+                    if(window.height() + 100 > end.getBoundingClientRect().bottom && !requestService.loading){
+                        requestService.loadFilteredRequests(requestService.requestData.next_page_url);
                     }
-
-                    //
-                    //console.log(window.scrollTop() + window.innerHeight());
-                    //console.log(list.offsetHeight);
-                    //console.log(list.scrollHeight);
-                    //if (list.scrollTop + list.offsetHeight > list.scrollHeight) {
-                    //    scope.$apply(attrs.scrolly);
-                    //}
                 });
             }
         }

@@ -33,7 +33,7 @@ angular.module('wtt', [
             $stateProvider
                 .state('requests', {
                     abstract: true,
-                    url: '/requests',
+                    url: '/requests?serviceId&customer&siteId&gvNumber&status',
                     templateUrl: 'requests/requests.html',
                     controller: 'RequestsCtrl'
                 })
