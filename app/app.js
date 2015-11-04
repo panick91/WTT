@@ -24,7 +24,7 @@ angular.module('wtt', [
             //init();
         }
     ]
-)
+    )
     .config(['$stateProvider',
         '$urlRouterProvider',
         '$locationProvider',
@@ -64,10 +64,36 @@ angular.module('wtt', [
                     //}
                 })
             //$locationProvider.html5Mode(true);
-        }]);
+        }])
 
-(function($){
-    $(function(){
+    .directive('toggleFilter', function ($window) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attrs) {
+
+                angular.element(element).bind('click', function (e) {
+                    e.stopImmediatePropagation();
+                    var target = angular.element(this).attr('data-activates');
+                    angular.element('#' + target).toggleClass('open');
+
+                    var unbind = angular.element($window).on('click', function (evt) {
+                        if(evt.target.id == "filter")
+                            return;
+                        if($(evt.target).closest('#filter').length)
+                            return;
+
+                        angular.element('#' + target).removeClass('open');
+                        angular.element($window).off('click');
+                    });
+                });
+
+            }
+        }
+    });
+;
+
+(function ($) {
+    $(function () {
 
 
     }); // end of document ready

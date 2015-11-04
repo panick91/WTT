@@ -64,8 +64,11 @@ angular.module('wtt.requestService', [])
 
                 for (var index in requestService.requestData.data) {
                     var request = requestService.requestData.data[index];
-                    if (request.sadDate !== null) {
+                    if (request.sadDate !== undefined) {
                         request.sadDate.date = new Date(request.sadDate.date);
+                    }
+                    if (request.currentWorkflowState === undefined) {
+                        request.currentWorkflowState = {currentState: -1 };
                     }
                     if (request.currentWorkflowState.currentState === -1) {
                         request.currentWorkflowState.stateText = "Not available";

@@ -1,5 +1,10 @@
 <div ng-show="data != null && data != ''" class="ct-chart ct-minor-seventh" id="deviations">
 </div>
+<div ng-show="data != null && data != ''" class="legend">
+    <h6>Legend</h6>
+    <div><span class="color green"></span><span>Days which the milestone was closed in advance</span></div>
+    <div><span class="color red"></span><span>Days which the milestone was closed in delay</span></div>
+</div>
 <div ng-show="!loading && (data == null || data == '')">
     <div>No data available yet!</div>
 </div>

@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="requests/detail/details.css">
     <link rel="stylesheet" href="requests/results/results.css">
-    <link rel="stylesheet" href="svg.css">
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
     <base href="/WTT/app/">
 </head>
@@ -33,7 +32,7 @@
 <div class="navbar-fixed">
     <nav class="blue lighten-4">
         <div class="nav-wrapper">
-            <a href="#" data-activates="filter" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="javascript:void(0)" data-activates="filter" toggle-filter class="button-collapse"><i class="material-icons">menu</i></a>
             <a ui-sref="requests.results" ui-sref-opts="{inherit: false, reload:true}" class="brand-logo">Workflow Tracking Tool</a>
         </div>
     </nav>

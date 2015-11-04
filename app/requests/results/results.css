@@ -1,10 +1,12 @@
 .row.results {
     padding: 20px 0;
     margin-right: 10px;
+    margin-top:0;
 }
 
-ul.results>li{
-    /*opacity: 0;*/
+ul.results > li>a {
+    position: relative;
+    display: block;
 }
 
 .card-panel.request {
@@ -12,6 +14,7 @@ ul.results>li{
     border-radius: 8px;
     cursor: pointer;
     color: black;
+    padding-right:10%;
 }
 
 .card-panel .info {
@@ -22,6 +25,27 @@ ul.results>li{
     color: #3A67B4;
 }
 
-.card-panel h5{
+.card-panel h5 {
     margin-top: 0;
+}
+
+.link-indicator{
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    font-size:3rem;
+    color:black;
+    transition: right linear 0.1s;
+}
+ul.results > li>a:hover .link-indicator{
+    right: calc(5% - 3px);
+}
+
+
+.results .milestone {
+    color: #3A67B4;
+}
+
+.results .milestone .fa.fa-play-circle-o{
+    color: #FF0000;
 }

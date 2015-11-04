@@ -37,12 +37,43 @@ angular.module('wtt.deviations', ['ui.materialize'])
 
             var chart = new Chartist.Bar('#deviations', data, options);
 
+            var $chart = $('#deviations');
+
+            var $toolTip = $chart
+                .append('<div class="tooltip"></div>')
+                .find('.tooltip')
+                .hide();
+
+            function getTooltipText(value){
+                var text = "";
+                if(value < 0) text = "Days behind" + "<br/>" + value;
+                else text = "Days in advance" + "<br/>" + value;
+                return text;
+            }
+
+            $chart.on('mouseenter', '.ct-bar', function() {
+                var $point = $(this),
+                    value = $point.attr('ct:value')
+                $toolTip.html(getTooltipText(value)).show();
+            });
+
+            $chart.on('mouseleave', '.ct-bar', function() {
+                $toolTip.hide();
+            });
+
+            $chart.on('mousemove', function(event) {
+                $toolTip.css({
+                    left: (event.offsetX || event.originalEvent.layerX) - $toolTip.width() / 2 - 10,
+                    top: (event.offsetY || event.originalEvent.layerY) - $toolTip.height() - 40
+                });
+            });
+
             /* Register listener to draw event of Chartist, so we can dynamically color our bars based on their value*/
             chart.on('draw', function (context) {
                 if (context.type === 'bar') {
                     if (Chartist.getMultiValue(context.value) < 0) {
                         context.element.attr({
-                            style: 'stroke: red'
+                            style: 'stroke: #F44336'
                         });
                     }
                 }

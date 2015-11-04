@@ -3,15 +3,35 @@
         <a ui-sref="requests.details({requestId:{{request.id}}})">
             <div class="card-panel request">
                 <div class="row">
-                    <div class="col s12"><h5>{{request.external_id2}}</h5></div>
+                    <div class="col s12 m5"><h5>{{request.external_id2}}</h5></div>
+                    <div class="col s12 m7">
+                        <svg version="1.1" viewBox="0 0 150 20" preserveAspectRatio="xMinYMin meet" class="timeline">
+                            <g ng-repeat="m in request.availableMilestones">
+                                <foreignObject class="milestone" width="15" height="15"
+                                               ng-attr-x="{{calcMilestonePosX(m.key,request.availableMilestones.length)}}"
+                                               y="0">
+                                    <i ng-hide="{{isMilestoneCompleted(m.key, request)}} || {{isWorking(m.key, request)}}"
+                                       class="fa fa-circle-o"></i>
+                                    <i ng-show="{{isMilestoneCompleted(m.key, request)}}" class="fa fa-check-circle-o"></i>
+                                    <i ng-show="{{isWorking(m.key, request)}}" class="fa fa-play-circle-o"></i>
+                                </foreignObject>
+                                <line ng-hide="{{m.key >= request.availableMilestones.length - 1}}"
+                                      ng-attr-x1="{{calcLinePosX1(m.key,request.availableMilestones.length)}}"
+                                      ng-attr-x2="{{calcLinePosX2(m.key,request.availableMilestones.length)}}"
+                                      y1="11" y2="11"
+                                      style="stroke-width:1"
+                                      fill="none" stroke="gray"></line>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col s12 m6">
+                    <div class="col s12 m5">
                         <label>Customer</label>
 
                         <div class="info" title="{{request.customer.name}}">{{request.customer.name}}</div>
                     </div>
-                    <div class="col s12 m3">
+                    <div class="col s12 m4">
                         <label>State</label>
 
                         <div class="info" title="{{request.currentWorkflowState.stateText}}">
@@ -26,6 +46,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="link-indicator">
+                <i class="fa fa-angle-right fa-3"></i>
             </div>
         </a>
     </li>
