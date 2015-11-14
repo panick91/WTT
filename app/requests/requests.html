@@ -1,31 +1,49 @@
 <div class="">
     <div id="filter" class="side-nav fixed">
         <div>
-            <form ng-submit="submit()">
+            <form data-ng-submit="submit()" name="search">
                 <div>
                     <div class="row">
                         <div class="col s12">
                             <div class="input-field">
-                                <input placeholder="Service ID" type="text" id="service_id"
-                                       ng-model="serviceId"/>
+                                <input placeholder="Service ID" type="text"
+                                       id="service_id"
+                                       name="serviceId"
+                                       data-ng-model="serviceId"
+                                       data-ng-maxlength="255"/>
+
+                                <div class="error-box" role="alert" data-ng-show="search.serviceId.$error.maxlength">
+                                <span class="error" data-ng-show="search.customer.$error.maxlength">
+                                  Maximum 255 characters!
+                                </span>
+                                </div>
                             </div>
                         </div>
                         <div class="col s12">
                             <div class="input-field">
-                                <input placeholder="Customer" type="text" id="customer_name"
-                                       ng-model="customer"/>
+                                <input placeholder="Customer" type="text"
+                                       id="customer_name"
+                                       name="customer"
+                                       data-ng-model="customer"
+                                       data-ng-maxlength="255"/>
+
+                                <div class="error-box" role="alert" data-ng-show="search.customer.$error.maxlength">
+                                <span class="error" data-ng-show="search.customer.$error.maxlength">
+                                  Maximum 255 characters!
+                                </span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col s12">
-                            <div class="input-field">
-                                <input placeholder="Site ID" type="text" id="site_id" ng-model="siteId"/>
-                            </div>
-                        </div>
-                        <div class="col s12">
-                            <div class="input-field">
-                                <input placeholder="GV-Nr." type="text" id="gv_nr" ng-model="gvNumber"/>
-                            </div>
-                        </div>
+                        <!--<div class="col s12">-->
+                        <!--<div class="input-field">-->
+                        <!--<input placeholder="Site ID" type="text" id="site_id" ng-model="siteId"/>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="col s12">-->
+                        <!--<div class="input-field">-->
+                        <!--<input placeholder="GV-Nr." type="text" id="gv_nr" ng-model="gvNumber"/>-->
+                        <!--</div>-->
+                        <!--</div>-->
                         <div class="col s12">
                             <select class="selectmenu"
                                     name="status"

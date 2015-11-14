@@ -52,6 +52,7 @@ var results = angular.module('wtt.results', ['wtt.requestService', 'wtt.infinite
         };
 
         $scope.isWorking = function (index, request) {
+            if(request.currentWorkflowState.currentState === -1) return false;
             return $scope.isMilestoneCompleted(index - 1, request);
         };
 

@@ -80,6 +80,18 @@ input[type=text]:focus:not([readonly]) {
     box-shadow: 4px;
 }
 
+/* Validation ---------------------------------------------------------*/
+.error-box{
+    height:15px;
+}
+.error{
+    padding-left:15px;
+    top: 40px;
+    position: absolute;
+    color:red;
+}
+
+
 /* Navigation ---------------------------------------------------------*/
 nav {
     width: 100%;
